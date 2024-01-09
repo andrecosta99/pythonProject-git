@@ -1,4 +1,3 @@
-# main.py
 from flask import Flask, render_template
 import pandas as pd
 import plotly
@@ -9,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    data = pd.read_csv('templates/repos.csv')  # Assegure-se de que o caminho está correto
+    data = pd.read_csv('templates/repos.csv')
     fig = px.bar(data, x='language', y='num_repos', title='Repository Count by Programming Language')
     graph_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 

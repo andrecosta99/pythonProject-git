@@ -32,7 +32,7 @@
         </table>
     </div>
 
-    <!-- Scripts necessários para DataTables, Plotly e Bootstrap -->
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
@@ -40,11 +40,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
-        // Renderizar o gráfico
+
         var graph = {{ graph_json|safe }};
         Plotly.newPlot('graph', graph.data, graph.layout);
 
-        // Inicializar DataTables
+
         $(document).ready(function() {
             $('#data-table').DataTable();
         });
